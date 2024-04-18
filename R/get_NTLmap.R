@@ -7,7 +7,6 @@
 #' @examples
 #' get_NTLmap(NTLraster, "Nighttime", 2015)
 
-
 get_NTLmap <- function(raster, maptheme, year){
   if (maptheme == "Nighttime") {
     ggplot() +

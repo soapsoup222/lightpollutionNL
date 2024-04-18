@@ -4,21 +4,31 @@
 \alias{get_NTLraster}
 \title{Create NTL Raster}
 \usage{
-get_NTLraster(country, product_id, ymd, low.rm = FALSE, mask = FALSE)
+get_NTLraster(
+  country = "NLD",
+  bearer,
+  product_id,
+  ymd,
+  low_rm = FALSE,
+  mask = FALSE,
+  output_type
+)
 }
 \arguments{
 \item{country}{country of interest}
+
+\item{bearer}{Your personal bearer token from NASA Earthdata}
 
 \item{product_id}{VNP46A1, VNP46A2, VNP46A3, VNP46A4}
 
 \item{ymd}{Year or Y-M-D}
 
-\item{bearer}{Your personal bearer token from NASA Earthdata}
+\item{low_rm}{Remove lowest values}
 
-\item{remlow}{Remove lowest values}
+\item{raster_to_points}{When TRUE outputs datarfame}
 }
 \value{
-A raster object
+A raster or dataframe object for plotting
 }
 \description{
 Create NTL Raster
