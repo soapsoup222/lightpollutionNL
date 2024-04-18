@@ -9,8 +9,8 @@
 #' @returns A raster or dataframe object for plotting
 #' @export
 #' @examples
-#' get_NTLraster("NLD", "VNP46A4", 2015, "examplebearertoken", "FALSE")
-get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FALSE, mask = FALSE, output_type){
+#' get_NTLraster("NLD", "examplebearertoken", "VNP46A4", 2015, "FALSE")
+get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FALSE, mask = FALSE){
 
   roi_sf <-  gadm(country = country, level=1, path = tempdir()) |> st_as_sf()
 
