@@ -16,4 +16,5 @@ get_NTLdf <- function(country, bearer, product_id = "VNP46A4", ymd,  tidy=TRUE){
                    product_id = product_id,
                    date = ymd,
                    bearer = bearer)
+  return(df)
 }
