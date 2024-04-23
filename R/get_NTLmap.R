@@ -1,11 +1,17 @@
 #' Create NTL map
 #'
+#' @import dplyr
+#' @import ggplot2
+#' @import blackmarbler
+#' @importFrom geodata gadm
+#' @importFrom sf st_as_sf
 #' @param raster get_NTLraster raster object
 #' @param maptheme Nighttime, Neonheatmap or Pastelheatmap
 #' @param ymd Year or date of map
 #' @returns Map plot
 #' @export
 #' @examples
+#'
 #' get_NTLmap(NTLraster, "Nighttime", 2015)
 
 get_NTLmap <- function(raster, maptheme = "Nighttime", ymd){

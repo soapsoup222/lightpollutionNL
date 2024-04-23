@@ -1,5 +1,12 @@
 #' Create NTL dataframe
 #'
+#' Create NTL df
+#'
+#'
+#' @import dplyr
+#' @import blackmarbler
+#' @importFrom geodata gadm
+#' @importFrom sf st_as_sf
 #' @param country country of interest
 #' @param bearer Your personal bearer token from NASA Earthdata
 #' @param product_id VNP46A1, VNP46A2, VNP46A3, VNP46A4

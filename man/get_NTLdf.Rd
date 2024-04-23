@@ -4,7 +4,7 @@
 \alias{get_NTLdf}
 \title{Create NTL dataframe}
 \usage{
-get_NTLdf(country, bearer, product_id = "VNP46A4", ymd, tidy = TRUE)
+get_NTLdf(country = "NLD", bearer, product_id = "VNP46A4", ymd)
 }
 \arguments{
 \item{country}{country of interest}
@@ -14,17 +14,13 @@ get_NTLdf(country, bearer, product_id = "VNP46A4", ymd, tidy = TRUE)
 \item{product_id}{VNP46A1, VNP46A2, VNP46A3, VNP46A4}
 
 \item{ymd}{Year or Y-M-D}
-
-\item{tidy}{when TRUE, outputs a tidied dataframe}
-
-\item{low_rm}{Remove lowest values}
 }
 \value{
 A dataframe object containing NTL values and coordinates
 }
 \description{
-Create NTL dataframe
+Create NTL df
 }
 \examples{
-get_NTLraster("NLD", "VNP46A4", 2015, "examplebearertoken", "FALSE")
+get_NTLdf("NLD", "examplebearertoken", "VNP46A4", 2015)
 }

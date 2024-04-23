@@ -4,12 +4,14 @@
 \alias{get_NTLmap}
 \title{Create NTL map}
 \usage{
-get_NTLmap(raster, maptheme, year)
+get_NTLmap(raster, maptheme = "Nighttime", ymd)
 }
 \arguments{
 \item{raster}{get_NTLraster raster object}
 
 \item{maptheme}{Nighttime, Neonheatmap or Pastelheatmap}
+
+\item{ymd}{Year or date of map}
 }
 \value{
 Map plot
@@ -18,5 +20,6 @@ Map plot
 Create NTL map
 }
 \examples{
+
 get_NTLmap(NTLraster, "Nighttime", 2015)
 }

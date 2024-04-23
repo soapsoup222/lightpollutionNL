@@ -10,8 +10,7 @@ get_NTLraster(
   product_id,
   ymd,
   low_rm = FALSE,
-  mask = FALSE,
-  output_type
+  mask = FALSE
 )
 }
 \arguments{
@@ -34,5 +33,5 @@ A raster or dataframe object for plotting
 Create NTL Raster
 }
 \examples{
-get_NTLraster("NLD", "VNP46A4", 2015, "examplebearertoken", "FALSE")
+get_NTLraster("NLD", "examplebearertoken", "VNP46A4", 2015, "FALSE")
 }
