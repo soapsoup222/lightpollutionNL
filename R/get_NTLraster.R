@@ -4,17 +4,19 @@
 #' @importFrom geodata gadm
 #' @importFrom sf st_as_sf
 #' @importFrom raster mask
+#' @importFrom raster rasterToPoints
 #' @param country country of interest
 #' @param bearer Your personal bearer token from NASA Earthdata
 #' @param product_id VNP46A1, VNP46A2, VNP46A3, VNP46A4
 #' @param ymd Year or Y-M-D
 #' @param low_rm Remove lowest values
-#' @param raster_to_points When TRUE outputs datarfame
+#' @param mask Mask country TRUE
+#' @param raster_to_points When TRUE outputs dataframe. Set TRUE if you want to map with ggplot.
 #' @returns A raster or dataframe object for plotting
 #' @export
 #' @examples
 #' get_NTLraster("NLD", "examplebearertoken", "VNP46A4", 2015, "FALSE")
-get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FALSE, mask = FALSE){
+get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FALSE, mask = FALSE, raster_to_points = TRUE){
 
   roi_sf <-  gadm(country = country, level=1, path = tempdir()) |> st_as_sf()
 
@@ -39,6 +41,12 @@ get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FAL
   } else {
     #log to unskew
     r$value_adj <- log(r$value+1)
+    return(r)
+  }
+  if (raster_to_points == TRUE) {
+    rasterToPoints(r)
+    return(r)
+  } else {
     return(r)
   }
 }

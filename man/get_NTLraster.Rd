@@ -10,7 +10,8 @@ get_NTLraster(
   product_id,
   ymd,
   low_rm = FALSE,
-  mask = FALSE
+  mask = FALSE,
+  raster_to_points = TRUE
 )
 }
 \arguments{
@@ -24,7 +25,9 @@ get_NTLraster(
 
 \item{low_rm}{Remove lowest values}
 
-\item{raster_to_points}{When TRUE outputs datarfame}
+\item{mask}{Mask country TRUE}
+
+\item{raster_to_points}{When TRUE outputs dataframe. Set TRUE if you want to map with ggplot.}
 }
 \value{
 A raster or dataframe object for plotting
