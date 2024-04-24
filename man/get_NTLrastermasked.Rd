@@ -6,6 +6,7 @@
 \usage{
 get_NTLrastermasked(
   country = "NLD",
+  sf_mask = NULL,
   bearer,
   product_id,
   ymd,
@@ -14,6 +15,8 @@ get_NTLrastermasked(
 }
 \arguments{
 \item{country}{country of interest}
+
+\item{sf_mask}{Optional parameter, if not NULL, uses the given sf object to mask}
 
 \item{bearer}{Your personal bearer token from NASA Earthdata}
 
