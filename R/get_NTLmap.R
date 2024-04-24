@@ -7,7 +7,7 @@
 #' @importFrom sf st_as_sf
 #' @param raster get_NTLraster raster object
 #' @param maptheme Nighttime, Neonheatmap or Pastelheatmap
-#' @param ymd Year or date of map
+#' @param ymd ymd or date of map
 #' @returns Map plot
 #' @export
 #' @examples
@@ -23,7 +23,7 @@ get_NTLmap <- function(raster, maptheme = "Nighttime", ymd){
       scale_fill_gradientn(colours = c("#070e34", "#ffe605", "white"),
                            values = c(0, 0.5, 1))+
       labs(fill = "Radiance/nW·cm-2·sr-1",
-           title = paste0("Light Pollution in the Netherlands ", year),
+           title = paste0("Light Pollution in the Netherlands ", ymd),
            subtitle = "Before Darkness Areas")+
       coord_quickmap() +
       theme_void() +
@@ -45,7 +45,7 @@ get_NTLmap <- function(raster, maptheme = "Nighttime", ymd){
       scale_fill_gradientn(colours = c("grey5","#0d0d89","#0000ff","#00ffff", "#00b200", "#ffff00", "#d10000"),
                            values = c(0, 0.1, 0.2, 0.25, 0.3, 0.5, 1))+
       labs(fill = "Radiance/nW·cm-2·sr-1",
-           title = paste0("Light Pollution in the Netherlands ", year),
+           title = paste0("Light Pollution in the Netherlands ", ymd),
            subtitle = "Before Darkness Areas")+
       coord_quickmap() +
       theme_void() +
@@ -66,7 +66,7 @@ get_NTLmap <- function(raster, maptheme = "Nighttime", ymd){
       scale_fill_gradientn(colours = c("#668ec2", "#b7deec", "#fbf8c4", "#fbb07a", "#d9534c", "#982fb5"),
                            values = c(0, 0.1, 0.2, 0.3, 0.5, 1))+
       labs(fill = "Radiance/nW·cm-2·sr-1",
-           title = paste0("Light Pollution in the Netherlands ", year),
+           title = paste0("Light Pollution in the Netherlands ", ymd),
            subtitle = "Before Darkness Areas")+
       coord_quickmap() +
       theme_void() +
