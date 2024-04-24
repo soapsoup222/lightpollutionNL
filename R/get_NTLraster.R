@@ -44,7 +44,7 @@ get_NTLraster <- function(country = "NLD", bearer, product_id, ymd, low_rm = FAL
     return(r)
   }
   if (raster_to_points == TRUE) {
-    rasterToPoints(r)
+    r <- rasterToPoints(r)
     return(r)
   } else {
     return(r)
