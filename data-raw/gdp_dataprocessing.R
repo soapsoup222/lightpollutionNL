@@ -1,4 +1,4 @@
-# data-raw/process.R
+# data-raw/gdp_dataprocessing.R
 # Data import and processing pipeline
 
 library(readr)
@@ -28,17 +28,17 @@ colnames(gdp_deflator) = paste0(".",colnames(gdp_deflator))
 regional_gdp_raw <- read_delim("data-raw/Regional_GDP.csv",
                            delim = ";", escape_double = FALSE, trim_ws = TRUE)
 
-regional_gdp_nominal <- regional_gdp_raw |>
+gdp_regional_nominal <- regional_gdp_raw |>
   mutate(Periods = str_replace(Periods, "\\*$", ""),
          Regions = str_replace(Regions, "\\(PV\\)", "")) |>
   pivot_wider(names_from = Periods,
               values_from = `GDP (market prices) (million euros)`) |>
   rename(region = Regions)
-colnames(regional_gdp_nominal) <- paste0(".", colnames(regional_gdp_nominal))
+colnames(gdp_regional_nominal) <- paste0(".", colnames(gdp_regional_nominal))
 
 #Real regional GDP
 
-regional_gdp_real <- regional_gdp_nominal |>
+gdp_regional_real <- gdp_regional_nominal |>
   mutate(
     `.2015` = `.2015`/gdp_deflator$`.2015`[1],
     `.2016` = `.2016`/gdp_deflator$`.2016`[1],
@@ -61,7 +61,7 @@ regional_gdp_real <- regional_gdp_nominal |>
 # Note that names are unquoted.
 # I like using overwrite = T so everytime I run the script the
 # updated objects are saved, but the default is overwrite = F
-usethis::use_data(regional_gdp_nominal,
+usethis::use_data(gdp_regional_nominal,
+                  gdp_regional_real,
                   gdp_deflator,
-                  regional_gdp_real,
                   overwrite = T)

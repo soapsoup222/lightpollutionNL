@@ -7,11 +7,9 @@
 get_NTLraster(
   country = "NLD",
   bearer,
-  product_id,
+  product_id = "VNP46A4",
   ymd,
-  low_rm = FALSE,
-  mask = FALSE,
-  raster_to_points = TRUE
+  output_raster = TRUE
 )
 }
 \arguments{
@@ -19,15 +17,11 @@ get_NTLraster(
 
 \item{bearer}{Your personal bearer token from NASA Earthdata}
 
-\item{product_id}{VNP46A1, VNP46A2, VNP46A3, VNP46A4}
+\item{product_id}{VNP46A1 (Raw Daily), VNP46A2 (Adjusted Daily), VNP46A3(Monthly), VNP46A4(Yearly)}
 
 \item{ymd}{Year or Y-M-D}
 
-\item{low_rm}{Remove lowest values}
-
-\item{mask}{Mask country TRUE}
-
-\item{raster_to_points}{When TRUE outputs dataframe. Set TRUE if you want to map with ggplot.}
+\item{output_raster}{When FALSE, outputs a dataframe object}
 }
 \value{
 A raster or dataframe object for plotting
@@ -37,4 +31,5 @@ Create NTL Raster
 }
 \examples{
 get_NTLraster("NLD", "examplebearertoken", "VNP46A4", 2015, "FALSE")
+
 }

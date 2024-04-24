@@ -11,7 +11,7 @@ get_NTLmap(raster, maptheme = "Nighttime", ymd)
 
 \item{maptheme}{Nighttime, Neonheatmap or Pastelheatmap}
 
-\item{ymd}{Year or date of map}
+\item{ymd}{ymd or date of map}
 }
 \value{
 Map plot
