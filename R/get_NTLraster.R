@@ -23,16 +23,16 @@ get_NTLraster <- function(country = "NLD", bearer, product_id = "VNP46A4", ymd, 
                  date = as.character(ymd),
                  bearer = bearer,
                  check_all_tiles_exist = FALSE)
-  r <- r |> rasterToPoints(spatial = TRUE) |>
-    as.data.frame()
-  names(r) <- c("value", "x", "y")
-  r$value[r$value <= 1] <- 0
-  r$value_adj <- log(r$value+1)
+  r[r <= 1] <- 0
+  r <- log(r+1)
   if (output_raster == TRUE) {
     r <- rasterFromXYZ(r,
                        crs = "WGS84")
     return(r)
   } else {
+    r <- r |> rasterToPoints(spatial = TRUE) |>
+      as.data.frame()
+    names(r) <- c("value", "x", "y")
     return(r)
   }
 }
