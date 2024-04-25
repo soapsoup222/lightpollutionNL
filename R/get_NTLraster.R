@@ -26,8 +26,7 @@ get_NTLraster <- function(country = "NLD", bearer, product_id = "VNP46A4", ymd, 
   r <- reclassify(r, matrix(c(0, 1, 0)), right = TRUE)
   r <- log10(r+1)
   if (output_raster == TRUE) {
-    r <- rasterFromXYZ(r,
-                       crs = "WGS84")
+    r <- crs(r, "WSG84")
     return(r)
   } else {
     r <- r |> rasterToPoints(spatial = TRUE) |>
