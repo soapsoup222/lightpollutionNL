@@ -17,7 +17,6 @@
 get_NTLraster <- function(country = "NLD", bearer, product_id = "VNP46A4", ymd, output_raster = TRUE) {
 
   roi_sf <-  gadm(country = country, level=1, path = tempdir()) |> st_as_sf()
-
   r <- bm_raster(roi_sf = roi_sf,
                  product_id = product_id,
                  date = as.character(ymd),
@@ -25,6 +24,7 @@ get_NTLraster <- function(country = "NLD", bearer, product_id = "VNP46A4", ymd, 
                  check_all_tiles_exist = FALSE)
   r <- reclassify(r, matrix(c(0, 1, 0)), right = TRUE)
   r <- log10(r+1)
+
   if (output_raster == TRUE) {
     return(r)
   } else {
