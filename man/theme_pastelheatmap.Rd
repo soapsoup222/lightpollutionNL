@@ -4,10 +4,7 @@
 \alias{theme_pastelheatmap}
 \title{Add pastelheatmap theme to plot}
 \usage{
-theme_pastelheatmap(plot)
-}
-\arguments{
-\item{plot}{a ggplot object}
+theme_pastelheatmap()
 }
 \value{
 A plot object with theme applied

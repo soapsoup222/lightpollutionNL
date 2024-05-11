@@ -4,10 +4,7 @@
 \alias{theme_nighttime}
 \title{Add nighttime theme to plot}
 \usage{
-theme_nighttime(plot)
-}
-\arguments{
-\item{plot}{a ggplot object}
+theme_nighttime()
 }
 \value{
 A plot object with theme applied

@@ -4,10 +4,7 @@
 \alias{theme_neonheatmap}
 \title{Add neonheatmap theme to plot}
 \usage{
-theme_neonheatmap(plot)
-}
-\arguments{
-\item{plot}{a ggplot object}
+theme_neonheatmap()
 }
 \value{
 A plot object with theme applied
