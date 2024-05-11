@@ -16,6 +16,6 @@ A plot object with theme applied
 Add nighttime theme to plot
 }
 \examples{
-plot |> theme_nighttime
+plot + theme_nighttime
 
 }

@@ -16,6 +16,6 @@ A plot object with theme applied
 Add pastelheatmap theme to plot
 }
 \examples{
-plot |> theme_pastelheatmap
+plot + theme_pastelheatmap
 
 }

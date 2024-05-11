@@ -16,6 +16,6 @@ A plot object with theme applied
 Add neonheatmap theme to plot
 }
 \examples{
-plot |> theme_neonheatmap
+plot + theme_neonheatmap
 
 }
