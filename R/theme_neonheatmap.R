@@ -7,6 +7,5 @@
 #'
 theme_neonheatmap <- function(){
     scale_fill_gradientn(colours = c("grey5","#0d0d89","#0000ff","#00ffff", "#00b200", "#ffff00", "#d10000"),
-                         values = c(0, 0.1, 0.2, 0.25, 0.3, 0.5, 1))+
-    theme_void()
+                         values = c(0, 0.1, 0.2, 0.25, 0.3, 0.5, 1))
 }
