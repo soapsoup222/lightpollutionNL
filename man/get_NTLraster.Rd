@@ -2,15 +2,9 @@
 % Please edit documentation in R/get_NTLraster.R
 \name{get_NTLraster}
 \alias{get_NTLraster}
-\title{Create NTL Raster}
+\title{Create NTL Raster with necessary transformations}
 \usage{
-get_NTLraster(
-  country = "NLD",
-  bearer,
-  product_id = "VNP46A4",
-  ymd,
-  output_raster = TRUE
-)
+get_NTLraster(country = "NLD", bearer, product_id = "VNP46A4", ymd)
 }
 \arguments{
 \item{country}{country of interest}
@@ -20,14 +14,12 @@ get_NTLraster(
 \item{product_id}{VNP46A1 (Raw Daily), VNP46A2 (Adjusted Daily), VNP46A3(Monthly), VNP46A4(Yearly)}
 
 \item{ymd}{Year or Y-M-D}
-
-\item{output_raster}{When FALSE, outputs a dataframe object}
 }
 \value{
-A raster or dataframe object for plotting
+A raster object for plotting
 }
 \description{
-Create NTL Raster
+Create NTL Raster with necessary transformations
 }
 \examples{
 get_NTLraster("NLD", "examplebearertoken", "VNP46A4", 2015, "FALSE")

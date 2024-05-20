@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_stackvalues.R
 \name{get_stackvalues}
 \alias{get_stackvalues}
-\title{Create NTL Raster}
+\title{Convert rasterstack object into df of values}
 \usage{
 get_stackvalues(rasterstack)
 }
@@ -13,7 +13,7 @@ get_stackvalues(rasterstack)
 A dataframe with each layer and its values
 }
 \description{
-Create NTL Raster
+Convert rasterstack object into df of values
 }
 \examples{
 get_NTLraster(rasterstack)

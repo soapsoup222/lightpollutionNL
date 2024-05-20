@@ -6,26 +6,23 @@
 \usage{
 save_NTLimages(
   country = "NLD",
+  bearer,
   product_id = "VNP46A4",
   years,
-  low.rm = FALSE,
-  mask = FALSE,
-  maptheme = "Nighttime",
+  maptheme = "PastelHeatMap",
   folderpath
 )
 }
 \arguments{
 \item{country}{country of interest}
 
-\item{product_id}{VNP46A1, VNP46A2, VNP46A3, VNP46A4}
-
-\item{sf_mask}{Optional parameter, if not NULL, uses the given sf object to mask}
-
 \item{bearer}{Your personal bearer token from NASA Earthdata}
 
-\item{ymd}{Year or Y-M-D}
+\item{product_id}{VNP46A1, VNP46A2, VNP46A3, VNP46A4}
 
-\item{output_raster}{When FALSE, outputs a dataframe object}
+\item{years}{Vector of years}
+
+\item{maptheme}{"Nighttime" "NeonHeatMap" or "PastelHeatMap"}
 }
 \value{
 A raster or dataframe object for plotting masked by country

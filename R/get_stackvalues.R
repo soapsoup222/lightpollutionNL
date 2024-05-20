@@ -1,4 +1,4 @@
-#' Create NTL Raster
+#' Convert rasterstack object into df of values
 #' @import dplyr
 #' @import raster
 #' @param rasterstack a rasterstack or rasterlayer object

@@ -2,24 +2,22 @@
 % Please edit documentation in R/get_NTLmap.R
 \name{get_NTLmap}
 \alias{get_NTLmap}
-\title{Create NTL map}
+\title{Create NTL map to use in combination with themes}
 \usage{
-get_NTLmap(raster, maptheme = "Nighttime", ymd)
+get_NTLmap(raster, ymd)
 }
 \arguments{
-\item{raster}{get_NTLraster raster object}
-
-\item{maptheme}{Nighttime, Neonheatmap or Pastelheatmap}
-
 \item{ymd}{ymd or date of map}
+
+\item{spatialdf}{spatial dataframe object from get_spatdf}
 }
 \value{
 Map plot
 }
 \description{
-Create NTL map
+Create NTL map to use in combination with themes
 }
 \examples{
 
-get_NTLmap(NTLraster, "Nighttime", 2015)
+get_NTLmap(NTLraster, 2015)
 }
